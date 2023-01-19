@@ -52,7 +52,9 @@ function loadDoc(url, cb) {
             const myObj = JSON.parse(this.responseText);
             return cb(myObj)
         } else {
-            document.getElementById("app").innerHTML = "loading";
+            const x = document.getElementById("app")
+            x.innerHTML = "Data tidak ditemukan";
+            x.classList.add('text-center', 'h4', 'text-secondary')
         }
     };
     xhttp.open("GET", url);
